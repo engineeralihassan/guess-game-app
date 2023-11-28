@@ -93,7 +93,7 @@ export class AppComponent {
   }
 
   calculatePenalties() {
-    this.remainingTime -= 5; // Deduct 5 seconds as a penalty
+    this.remainingTime -= 5;
   }
 
   calculateScore() {
@@ -101,7 +101,6 @@ export class AppComponent {
   }
 
   saveHighScore() {
-    // Save high score to local storage
     const existingHighScores = JSON.parse(localStorage.getItem('highScores') || '[]');
     existingHighScores.push({ difficulty: this.difficulty, score: this.score });
     localStorage.setItem('highScores', JSON.stringify(existingHighScores));
@@ -109,7 +108,6 @@ export class AppComponent {
   }
 
   loadHighScores() {
-    // Load high scores from local storage
     this.highScores = JSON.parse(localStorage.getItem('highScores') || '[]');
   }
 
@@ -138,7 +136,6 @@ export class AppComponent {
     }
   }
   getColor() {
-    // Define the colors based on different statuses
     switch (this.status) {
       case 'success':
         return 'lightgreen';
